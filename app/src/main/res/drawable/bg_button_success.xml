@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gradient background for success buttons -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="135"
+        android:startColor="#4ADE80"
+        android:endColor="#86EFAC"
+        android:type="linear" />
+    <corners android:radius="12dp" />
+</shape>

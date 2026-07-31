@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Animated background for splash/loading screens -->
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/ic_ai_status">
+    <target
+        android:name="pulse_ring"
+        android:animation="@animator/pulse_animation" />
+    <target
+        android:name="core_glow"
+        android:animation="@animator/glow_animation" />
+</animated-vector>

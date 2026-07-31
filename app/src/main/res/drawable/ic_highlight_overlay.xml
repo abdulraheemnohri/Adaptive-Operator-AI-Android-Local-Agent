@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Highlight overlay for screen elements -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <stroke
+        android:width="3dp"
+        android:color="#5CE1E6" />
+    <corners android:radius="8dp" />
+    <solid android:color="#405CE1E6" />
+</shape>

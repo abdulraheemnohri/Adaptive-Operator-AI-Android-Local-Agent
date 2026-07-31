@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gradient background for cards -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="135"
+        android:startColor="#1A1F2E"
+        android:endColor="#0D1117"
+        android:type="linear" />
+    <corners android:radius="16dp" />
+</shape>
