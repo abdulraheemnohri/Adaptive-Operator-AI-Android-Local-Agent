@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Floating bubble background with shadow -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#40000000" />
+            <size
+                android:width="60dp"
+                android:height="60dp" />
+        </shape>
+    </item>
+    <item android:bottom="2dp">
+        <shape android:shape="oval">
+            <gradient
+                android:angle="135"
+                android:startColor="#5CE1E6"
+                android:endColor="#7DF5FF"
+                android:type="radial"
+                android:gradientRadius="30dp" />
+            <size
+                android:width="56dp"
+                android:height="56dp" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,62 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Networking: model download only. No runtime inference traffic ever leaves the device. -->
+    <!-- ==================== CORE AI & PROCESSING ==================== -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <!-- Operator control surfaces -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
-    <!-- Voice -->
+    <!-- ==================== MODEL DOWNLOAD & STORAGE ==================== -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <!-- ==================== ACCESSIBILITY & UI CONTROL ==================== -->
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- ==================== OVERLAY / FLOATING WINDOW ==================== -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+
+    <!-- ==================== VOICE INPUT & OUTPUT ==================== -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <!-- ==================== NOTIFICATIONS ==================== -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- ==================== BATTERY & POWER MANAGEMENT ==================== -->
+    <uses-permission android:name="android.permission.BATTERY_STATS" />
+    <uses-permission android:name="android.permission.POWER_USAGE_MONITOR" />
+
+    <!-- ==================== DEVICE STATE & INFORMATION ==================== -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- ==================== BOOT & BACKGROUND TASKS ==================== -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+
+    <!-- ==================== THERMAL & PERFORMANCE MONITORING ==================== -->
+    <uses-permission android:name="android.permission.THERMAL_MONITORING" />
+
+    <!-- ==================== BIOMETRIC & SECURITY ==================== -->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <!-- ==================== LOCATION (CONTEXT AWARENESS - OPTIONAL) ==================== -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- ==================== CAMERA (OPTIONAL FUTURE FEATURES) ==================== -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <!-- ==================== BLUETOOTH (DEVICE CONNECTIVITY) ==================== -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+
+    <!-- ==================== NFC (OPTIONAL INTEGRATIONS) ==================== -->
+    <uses-permission android:name="android.permission.NFC" />
+
+    <!-- ==================== SCREEN CONTROL ==================== -->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.KEEP_SCREEN_ON" />
+
+    <!-- ==================== APP FEATURES ==================== -->
+    <uses-feature android:name="android.hardware.touchscreen" android:required="true" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false" />
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false" />
+    <uses-feature android:name="android.hardware.location" android:required="false" />
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false" />
+    <uses-feature android:name="android.hardware.nfc" android:required="false" />
 
     <application
         android:name=".AdaptiveOperatorApp"
-        android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_app_logo"
+        android:roundIcon="@drawable/ic_app_logo"
         android:label="@string/app_name"
         android:theme="@style/Theme.AdaptiveOperatorAI"
-        android:supportsRtl="true">
+        android:supportsRtl="true"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:enableOnBackInvokedCallback="true"
+        tools:targetApi="35">
 
+        <!-- ==================== MAIN ACTIVITY ==================== -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- The "hands": reads and acts on the accessibility tree. -->
+        <!-- ==================== ACCESSIBILITY SERVICE (THE HANDS) ==================== -->
         <service
             android:name=".android.accessibility.OperatorAccessibilityService"
-            android:exported="false"
-            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            android:exported="true"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:foregroundServiceType="specialUse">
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
             <meta-data
                 android:name="android.accessibilityservice"
                 android:resource="@xml/accessibility_service_config" />
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="accessibility_operator_service" />
         </service>
 
-        <!-- The "eyes": event-driven MediaProjection capture, runs only while actively observing. -->
+        <!-- ==================== SCREEN CAPTURE SERVICE (THE EYES) ==================== -->
         <service
-            android:name=".android.capture.ScreenCaptureService"
+            android:name=".android.screencapture.ScreenCaptureService"
             android:exported="false"
             android:foregroundServiceType="mediaProjection" />
 
-        <!-- Floating operator bubble + panel (Section 32-38). -->
+        <!-- ==================== FLOATING OPERATOR SERVICE ==================== -->
         <service
-            android:name=".presentation.floating.FloatingOperatorService"
+            android:name=".ui.floating.FloatingOperatorService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="floating_operator_overlay" />
+        </service>
+
+        <!-- ==================== MODEL DOWNLOAD SERVICE ==================== -->
+        <service
+            android:name=".ai.model.ModelDownloadService"
             android:exported="false"
             android:foregroundServiceType="dataSync" />
+
+        <!-- ==================== VOICE INPUT SERVICE ==================== -->
+        <service
+            android:name=".android.voice.VoiceInputService"
+            android:exported="false"
+            android:foregroundServiceType="microphone" />
+
+        <!-- ==================== TEXT TO SPEECH SERVICE ==================== -->
+        <service
+            android:name=".android.voice.TextToSpeechService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+        <!-- ==================== BOOT RECEIVER ==================== -->
+        <receiver
+            android:name=".receivers.BootReceiver"
+            android:exported="true"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+
+        <!-- ==================== ALARM RECEIVER ==================== -->
+        <receiver
+            android:name=".receivers.AlarmReceiver"
+            android:exported="false" />
+
+        <!-- ==================== NOTIFICATION CLICK RECEIVER ==================== -->
+        <receiver
+            android:name=".receivers.NotificationActionReceiver"
+            android:exported="false" />
+
+        <!-- ==================== FILE PROVIDER ==================== -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- ==================== EMERGENCY STOP TILE (Quick Settings) ==================== -->
+        <service
+            android:name=".ui.tiles.EmergencyStopTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_stop"
+            android:label="@string/emergency_stop"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
 
     </application>
 
