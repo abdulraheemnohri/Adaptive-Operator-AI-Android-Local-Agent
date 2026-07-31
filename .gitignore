@@ -1,12 +1,44 @@
-# Gradle files
-.gradle/
-build/
-app/build/
+```
+# Compiled and build artifacts
+*.class
+*.o
+*.obj
+*.out
+*.dll
+*.so
+*.a
 
-# Android Studio and IDE files
+# Dependencies
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+node_modules/
+venv/
+.venv/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
+.vscode/
 .idea/
-*.iml
-.DS_Store
 
-# Local configuration
-local.properties
+# Build systems
+build/
+dist/
+target/
+.gradle/
+
+# Mobile/Android specific
+*.apk
+*.aar
+*.dex
+*.so
+```

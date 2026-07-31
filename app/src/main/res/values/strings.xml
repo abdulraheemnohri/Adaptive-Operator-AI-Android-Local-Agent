@@ -1,5 +1,338 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- App Identity -->
     <string name="app_name">Adaptive Operator AI</string>
+    <string name="app_tagline">Your Android. One Local AI. Learns How You Work.</string>
     <string name="accessibility_service_description">Lets the on-device Gemma 4 E2B-it model read screen contents and, when you enable Operator Mode, perform taps, swipes and text entry on your behalf. Everything runs locally; nothing is sent off-device.</string>
+
+    <!-- Home Dashboard -->
+    <string name="home_title">Adaptive Operator AI</string>
+    <string name="home_subtitle">Local AI Assistant powered by Gemma 4 E2B-it</string>
+    <string name="ai_status_card_title">AI Status</string>
+    <string name="ai_status_model">Gemma 4 E2B-it</string>
+    <string name="ai_status_ready">Ready</string>
+    <string name="ai_status_loading">Loading</string>
+    <string name="ai_status_thinking">Thinking</string>
+    <string name="ai_status_acting">Acting</string>
+    <string name="ai_status_observing">Observing</string>
+    <string name="ai_status_error">Error</string>
+    <string name="ai_status_idle">Idle</string>
+    
+    <string name="runtime_card_title">Runtime</string>
+    <string name="runtime_backend_auto">Automatic</string>
+    <string name="runtime_backend_npu">NPU</string>
+    <string name="runtime_backend_gpu">GPU</string>
+    <string name="runtime_backend_cpu">CPU</string>
+    <string name="runtime_tokens_per_sec">%1$d tok/s</string>
+    
+    <string name="memory_card_title">Memory</string>
+    <string name="memory_experiences_count">%1$d experiences</string>
+    <string name="memory_skills_count">%1$d learned skills</string>
+    
+    <string name="operator_card_title">Operator</string>
+    <string name="operator_status_ready">Ready</string>
+    <string name="operator_start">Start</string>
+    <string name="operator_stop">Stop</string>
+    <string name="operator_running">Running</string>
+
+    <!-- Model Manager -->
+    <string name="model_manager_title">AI Model</string>
+    <string name="model_name">Gemma 4 E2B-it</string>
+    <string name="model_runtime">LiteRT-LM</string>
+    <string name="model_status_installed">Installed</string>
+    <string name="model_status_not_installed">Not Installed</string>
+    <string name="model_status_downloading">Downloading</string>
+    <string name="model_status_installing">Installing</string>
+    <string name="model_backend_label">Backend</string>
+    <string name="model_size_label">Model Size</string>
+    <string name="storage_label">Storage</string>
+    <string name="version_label">Version</string>
+    <string name="capabilities_label">Capabilities</string>
+    <string name="capability_text">Text</string>
+    <string name="capability_image">Image</string>
+    <string name="capability_audio">Audio</string>
+    <string name="capability_reasoning">Reasoning</string>
+    <string name="capability_tool_calling">Tool Calling</string>
+    <string name="capability_multilingual">Multilingual</string>
+    
+    <string name="btn_download">Download AI Model</string>
+    <string name="btn_install">Install</string>
+    <string name="btn_verify">Verify</string>
+    <string name="btn_update">Update</string>
+    <string name="btn_remove">Remove</string>
+    <string name="btn_reinstall">Reinstall</string>
+    <string name="btn_benchmark">Benchmark</string>
+    <string name="btn_runtime_test">Runtime Test</string>
+    <string name="btn_pause">Pause</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_resume">Resume</string>
+    <string name="btn_retry">Retry</string>
+    
+    <string name="download_progress_label">Downloaded</string>
+    <string name="download_speed_label">Speed</string>
+    <string name="download_eta_label">ETA</string>
+    <string name="download_seconds">%1$d seconds</string>
+    
+    <string name="install_status_model">Model</string>
+    <string name="install_status_runtime">Runtime</string>
+    <string name="install_status_backend">Backend</string>
+    <string name="install_status_status">Status</string>
+    <string name="install_status_operational">Operational</string>
+    <string name="install_status_ready">Ready</string>
+
+    <!-- Chat Screen -->
+    <string name="chat_title">Chat</string>
+    <string name="chat_hint">Ask me anything…</string>
+    <string name="chat_btn_send">Send</string>
+    <string name="chat_btn_mic">Voice Input</string>
+    <string name="chat_btn_screenshot">Attach Screenshot</string>
+    <string name="chat_btn_analyze">Analyze Screen</string>
+    <string name="chat_btn_stop">Stop</string>
+    <string name="chat_btn_clear">Clear</string>
+    <string name="chat_btn_regenerate">Regenerate</string>
+    <string name="chat_executing">Executing…</string>
+    <string name="chat_task_complete">Task Complete</string>
+
+    <!-- Operator Screen -->
+    <string name="operator_screen_title">Operator</string>
+    <string name="operator_preview_label">Screen Preview</string>
+    <string name="operator_task_label">Task</string>
+    <string name="operator_plan_label">Plan</string>
+    <string name="operator_ai_state_label">AI State</string>
+    <string name="operator_stop_all">STOP ALL ACTIONS</string>
+
+    <!-- Skills Screen -->
+    <string name="skills_title">My Skills</string>
+    <string name="skills_success_rate">%1$d%% success</string>
+    <string name="skills_confidence_high">High</string>
+    <string name="skills_confidence_medium">Medium</string>
+    <string name="skills_confidence_low">Low</string>
+    <string name="skill_action_run">Run</string>
+    <string name="skill_action_edit">Edit</string>
+    <string name="skill_action_disable">Disable</string>
+    <string name="skill_action_delete">Delete</string>
+    <string name="skill_action_export">Export</string>
+
+    <!-- Memory Screen -->
+    <string name="memory_title">Memory</string>
+    <string name="memory_tab_tasks">Tasks</string>
+    <string name="memory_tab_experiences">Experiences</string>
+    <string name="memory_tab_history">History</string>
+    <string name="memory_clear_all">Clear All</string>
+    <string name="memory_duration">%1$.1f seconds</string>
+    <string name="memory_result_success">SUCCESS</string>
+    <string name="memory_result_failure">FAILURE</string>
+
+    <!-- Security Center -->
+    <string name="security_title">Security Center</string>
+    <string name="security_accessibility">Accessibility</string>
+    <string name="security_screen_capture">Screen Capture</string>
+    <string name="security_overlay">Overlay</string>
+    <string name="security_operator">Operator</string>
+    <string name="security_blocked_apps">Blocked Apps</string>
+    <string name="security_risk_policy">Risk Policy</string>
+    <string name="security_policy_balanced">Balanced</string>
+    <string name="security_policy_conservative">Conservative</string>
+    <string name="security_policy_aggressive">Aggressive</string>
+    <string name="security_emergency_stop">Emergency Stop</string>
+    <string name="security_enabled">Enabled</string>
+    <string name="security_disabled">Disabled</string>
+    <string name="security_available">Available</string>
+    <string name="security_active">Active</string>
+
+    <!-- Privacy Center -->
+    <string name="privacy_title">Privacy Center</string>
+    <string name="privacy_ai_processing">AI Processing</string>
+    <string name="privacy_screenshots">Screenshots</string>
+    <string name="privacy_memory">Memory</string>
+    <string name="privacy_tasks">Tasks</string>
+    <string name="privacy_ai_api">AI API</string>
+    <string name="privacy_cloud_ai">Cloud AI</string>
+    <string name="privacy_on_device">On Device</string>
+    <string name="privacy_local">Local</string>
+    <string name="privacy_none">None</string>
+    <string name="privacy_disabled">Disabled</string>
+    
+    <string name="privacy_hide_overlay_passwords">Hide on password fields</string>
+    <string name="privacy_hide_overlay_banking">Hide on banking apps</string>
+    <string name="privacy_hide_overlay_private">Hide on private screens</string>
+    <string name="privacy_hide_overlay_lockscreen">Hide on lock screen</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    
+    <string name="settings_category_ai_runtime">AI Runtime</string>
+    <string name="settings_model">Model</string>
+    <string name="settings_backend">Backend</string>
+    <string name="settings_thinking">Thinking Mode</string>
+    <string name="settings_generation">Generation</string>
+    <string name="settings_context">Context Length</string>
+    <string name="settings_performance">Performance</string>
+    
+    <string name="settings_category_operator">Operator</string>
+    <string name="settings_autonomous_mode">Autonomous Mode</string>
+    <string name="settings_confirmation">Confirmation</string>
+    <string name="settings_retry_limit">Retry Limit</string>
+    <string name="settings_observation">Observation</string>
+    <string name="settings_timeout">Timeout</string>
+    
+    <string name="settings_category_accessibility">Accessibility</string>
+    <string name="settings_service_status">Service Status</string>
+    <string name="settings_permissions">Permissions</string>
+    <string name="settings_safe_mode">Safe Mode</string>
+    
+    <string name="settings_category_screen_capture">Screen Capture</string>
+    <string name="settings_permission">Permission</string>
+    <string name="settings_capture_quality">Capture Quality</string>
+    <string name="settings_auto_capture">Auto Capture</string>
+    
+    <string name="settings_category_voice">Voice</string>
+    <string name="settings_speech_input">Speech Input</string>
+    <string name="settings_tts">TTS Output</string>
+    <string name="settings_auto_speak">Auto Speak</string>
+    
+    <string name="settings_category_floating">Floating Operator</string>
+    <string name="settings_enable">Enable</string>
+    <string name="settings_size">Size</string>
+    <string name="settings_opacity">Opacity</string>
+    <string name="settings_position">Position</string>
+    <string name="settings_quick_actions">Quick Actions</string>
+    <string name="settings_auto_hide">Auto Hide</string>
+    
+    <string name="settings_category_memory">Memory</string>
+    <string name="settings_experiences">Experiences</string>
+    <string name="settings_skills">Skills</string>
+    <string name="settings_history">History</string>
+    <string name="settings_clear">Clear</string>
+    
+    <string name="settings_category_security">Security</string>
+    <string name="settings_blocklist">Blocklist</string>
+    <string name="settings_risk_policy">Risk Policy</string>
+    <string name="settings_emergency_stop">Emergency Stop</string>
+    
+    <string name="settings_category_about">About</string>
+
+    <!-- Floating Operator -->
+    <string name="floating_operator_ask">Ask AI</string>
+    <string name="floating_operator_analyze">Analyze Screen</string>
+    <string name="floating_operator_read">Read Screen</string>
+    <string name="floating_operator_explain">Explain Screen</string>
+    <string name="floating_operator_translate">Translate Screen</string>
+    <string name="floating_operator_start">Start Operator</string>
+    <string name="floating_operator_stop">Stop Operator</string>
+    <string name="floating_operator_screenshot">Screenshot</string>
+    <string name="floating_current_app">Current: %1$s</string>
+    <string name="floating_ai_ready">AI: Ready</string>
+    <string name="floating_ai_working">AI: Working…</string>
+    
+    <string name="notification_channel_operator">Operator Service</string>
+    <string name="notification_channel_download">Model Download</string>
+    <string name="notification_operator_running">Operator Running</string>
+    <string name="notification_download_in_progress">Downloading AI Model</string>
+
+    <!-- Resource Monitor -->
+    <string name="monitor_title">Resource Monitor</string>
+    <string name="monitor_cpu">CPU</string>
+    <string name="monitor_gpu">GPU</string>
+    <string name="monitor_ram">RAM</string>
+    <string name="monitor_temperature">Temperature</string>
+    <string name="monitor_battery">Battery</string>
+    <string name="monitor_model">Model</string>
+    <string name="monitor_loaded">Loaded</string>
+    <string name="monitor_unloaded">Unloaded</string>
+    <string name="monitor_thermal_protection">Thermal Protection</string>
+    <string name="monitor_thermal_safe_mode">Thermal Safe Mode</string>
+    <string name="monitor_performance_reduced">Performance Reduced</string>
+
+    <!-- Battery Management -->
+    <string name="battery_mode_maximum">Maximum Battery</string>
+    <string name="battery_mode_balanced">Balanced</string>
+    <string name="battery_mode_performance">Performance</string>
+    <string name="battery_desc_maximum">Unload quickly, minimal capture</string>
+    <string name="battery_desc_balanced">Normal operation</string>
+    <string name="battery_desc_performance">Keep warm, aggressive</string>
+
+    <!-- Confirmation Modes -->
+    <string name="confirmation_risky">Ask for risky actions</string>
+    <string name="confirmation_every">Ask for every action</string>
+    <string name="confirmation_autonomous">Autonomous low-risk</string>
+
+    <!-- Task History -->
+    <string name="task_today">Today</string>
+    <string name="task_yesterday">Yesterday</string>
+    <string name="task_this_week">This Week</string>
+    <string name="task_older">Older</string>
+    <string name="task_duration">Duration: %1$.1fs</string>
+    <string name="task_actions">%1$d actions</string>
+    <string name="task_latency">Latency: %1$dms</string>
+    <string name="task_skill_used">Skill: %1$s</string>
+
+    <!-- Benchmark -->
+    <string name="benchmark_title">Runtime Benchmark</string>
+    <string name="benchmark_model_loading">Model Loading</string>
+    <string name="benchmark_text_inference">Text Inference</string>
+    <string name="benchmark_image_inference">Image Inference</string>
+    <string name="benchmark_tool_generation">Tool Generation</string>
+    <string name="benchmark_screen_analysis">Screen Analysis</string>
+    <string name="benchmark_avg_latency">Average Latency</string>
+    <string name="benchmark_tokens_sec">Tokens/sec</string>
+    <string name="benchmark_memory_usage">Memory Usage</string>
+    <string name="benchmark_run_again">Run Benchmark Again</string>
+
+    <!-- Welcome Screen -->
+    <string name="welcome_title">Welcome to Adaptive Operator AI</string>
+    <string name="welcome_subtitle">Local AI Assistant</string>
+    <string name="welcome_description">Gemma 4 E2B-it\nOn-device intelligence</string>
+    <string name="welcome_get_started">Get Started</string>
+
+    <!-- Permission Requests -->
+    <string name="permission_overlay_title">Overlay Permission Required</string>
+    <string name="permission_overlay_description">The Floating Operator needs permission to display over other apps. This allows quick access to AI assistance anywhere.</string>
+    <string name="permission_overlay_enable">Enable Overlay</string>
+    <string name="permission_overlay_deny">Not Now</string>
+    
+    <string name="permission_accessibility_title">Accessibility Permission</string>
+    <string name="permission_accessibility_description">Required for the Operator to read and interact with your screen.</string>
+    <string name="permission_accessibility_enable">Enable Accessibility</string>
+    
+    <string name="permission_screen_capture_title">Screen Capture Permission</string>
+    <string name="permission_screen_capture_description">Required for visual understanding of your screen.</string>
+    <string name="permission_screen_capture_start">Start Capture</string>
+
+    <!-- Error Messages -->
+    <string name="error_generic">Something went wrong</string>
+    <string name="error_network">Network error. Please check your connection.</string>
+    <string name="error_storage">Insufficient storage space</string>
+    <string name="error_corrupted_download">Download corrupted. Retrying…</string>
+    <string name="error_compatibility">Device not compatible with this model</string>
+    <string name="error_thermal">Device overheating. Performance reduced.</string>
+    <string name="error_permission_denied">Permission denied</string>
+    <string name="error_action_failed">Action failed</string>
+    <string name="error_max_retries">Maximum retries reached</string>
+    <string name="error_could_not_complete">I couldn\'t complete this action.</string>
+    <string name="error_try_again">Try Again</string>
+
+    <!-- Success Messages -->
+    <string name="success_download">Download complete</string>
+    <string name="success_install">Installation successful</string>
+    <string name="success_verify">Verification passed</string>
+    <string name="success_task">Task completed successfully</string>
+    <string name="success_skill_learned">New skill learned!</string>
+
+    <!-- Miscellaneous -->
+    <string name="loading">Loading…</string>
+    <string name="preparing">Preparing…</string>
+    <string name="optimizing">Optimizing…</string>
+    <string name="done">Done</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">OK</string>
+    <string name="close">Close</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="reset">Reset</string>
+    <string name="apply">Apply</string>
 </resources>
