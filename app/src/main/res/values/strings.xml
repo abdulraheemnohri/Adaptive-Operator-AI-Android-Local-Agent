@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Adaptive Operator AI</string>
+    <string name="accessibility_service_description">Lets the on-device Gemma 4 E2B-it model read screen contents and, when you enable Operator Mode, perform taps, swipes and text entry on your behalf. Everything runs locally; nothing is sent off-device.</string>
+</resources>
