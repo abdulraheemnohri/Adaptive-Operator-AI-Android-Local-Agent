@@ -2,14 +2,17 @@ package com.adaptiveoperator.ai.ai.runtime
 
 import android.content.Context
 import com.google.ai.edge.litertlm.Backend
+import com.google.ai.edge.litertlm.Content
 import com.google.ai.edge.litertlm.Conversation
 import com.google.ai.edge.litertlm.ConversationConfig
 import com.google.ai.edge.litertlm.Engine
 import com.google.ai.edge.litertlm.EngineConfig
 import com.google.ai.edge.litertlm.LiteRtLmJniException
 import com.google.ai.edge.litertlm.Message
+import com.google.ai.edge.litertlm.SamplerConfig
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import javax.inject.Inject
@@ -62,8 +65,8 @@ class GemmaEngineWrapper @Inject constructor(
             try {
                 val nativeBackend = when (candidate) {
                     InferenceBackend.NPU -> Backend.NPU(nativeLibraryDir = context.applicationInfo.nativeLibraryDir)
-                    InferenceBackend.GPU -> Backend.GPU
-                    InferenceBackend.CPU, InferenceBackend.AUTOMATIC -> Backend.CPU
+                    InferenceBackend.GPU -> Backend.GPU()
+                    InferenceBackend.CPU, InferenceBackend.AUTOMATIC -> Backend.CPU()
                 }
 
                 val engineConfig = EngineConfig(
@@ -75,11 +78,14 @@ class GemmaEngineWrapper @Inject constructor(
                 val newEngine = Engine(engineConfig)
                 newEngine.initialize()
 
+                val samplerConfig = SamplerConfig(
+                    config.topK,
+                    config.topP.toDouble(),
+                    config.temperature.toDouble(),
+                    0
+                )
                 val convConfig = ConversationConfig(
-                    temperature = config.temperature,
-                    topP = config.topP,
-                    topK = config.topK,
-                    maxOutputTokens = config.maxOutputTokens
+                    samplerConfig = samplerConfig
                 )
                 val newConversation = newEngine.createConversation(convConfig)
 
@@ -99,7 +105,9 @@ class GemmaEngineWrapper @Inject constructor(
     /** Streams the model's response token-by-token via the Conversation Flow API. */
     fun sendMessage(text: String): Flow<String> {
         val conv = conversation ?: throw IllegalStateException("Engine not loaded -- call load() first")
-        return conv.sendMessageAsync(Message.of(text))
+        return conv.sendMessageAsync(Message.of(text)).map { msg ->
+            msg.contents.contents.filterIsInstance<Content.Text>().joinToString("") { it.text }
+        }
     }
 
     suspend fun unload() = lock.withLock { unloadLocked() }

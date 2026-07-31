@@ -2,7 +2,7 @@
 <!--
   Section 18 (Accessibility Service): declares the service as capable of both reading
   the UI tree (Safe Mode) and performing gestures/actions (Operator Mode). The actual
-  read-only vs. interactive gating happens in SecurityPolicy at runtime, not here --
+  read-only vs. interactive gating happens in SecurityPolicy at runtime, not here:
   this manifest only grants the ceiling of what Android allows.
 -->
 <accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"

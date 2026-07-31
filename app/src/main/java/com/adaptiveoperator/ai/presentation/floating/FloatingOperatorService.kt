@@ -21,8 +21,8 @@ import androidx.core.app.NotificationCompat
 import com.adaptiveoperator.ai.R
 import androidx.compose.ui.graphics.toArgb
 import com.adaptiveoperator.ai.agent.AgentOrchestrator
-import com.adaptiveoperator.ai.agent.color
-import com.adaptiveoperator.ai.agent.label
+import com.adaptiveoperator.ai.presentation.components.color
+import com.adaptiveoperator.ai.presentation.components.label
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

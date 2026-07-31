@@ -10,6 +10,7 @@ import com.adaptiveoperator.ai.memory.db.entity.ExperienceEntity
 import com.adaptiveoperator.ai.memory.db.entity.TaskEntity
 import com.adaptiveoperator.ai.memory.db.entity.ToolHistoryEntity
 import kotlinx.coroutines.flow.Flow
+import kotlinx.serialization.encodeToString
 import javax.inject.Inject
 import javax.inject.Singleton
 
