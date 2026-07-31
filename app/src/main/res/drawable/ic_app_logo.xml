@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- App Logo Icon - Neural Network with rings -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Outer ring - AI awareness -->
+    <path
+        android:fillColor="#0B0D0F"
+        android:pathData="M54 54m-48 0a48 48 0 1 1 96 0a48 48 0 1 1 -96 0"/>
+    
+    <!-- Middle ring - Processing -->
+    <path
+        android:strokeColor="#1E3A5F"
+        android:strokeWidth="2"
+        android:pathData="M54 54m-38 0a38 38 0 1 1 76 0a38 38 0 1 1 -76 0"/>
+    
+    <!-- Inner ring - Focus -->
+    <path
+        android:strokeColor="#5CE1E6"
+        android:strokeWidth="2"
+        android:pathData="M54 54m-28 0a28 28 0 1 1 56 0a28 28 0 1 1 -56 0"/>
+    
+    <!-- Data points around the circle -->
+    <path android:fillColor="#7DF5FF" android:pathData="M54 22m-2 0a2 2 0 1 1 4 0a2 2 0 1 1 -4 0"/>
+    <path android:fillColor="#7DF5FF" android:pathData="M54 86m-2 0a2 2 0 1 1 4 0a2 2 0 1 1 -4 0"/>
+    <path android:fillColor="#7DF5FF" android:pathData="M22 54m-2 0a2 2 0 1 1 4 0a2 2 0 1 1 -4 0"/>
+    <path android:fillColor="#7DF5FF" android:pathData="M86 54m-2 0a2 2 0 1 1 4 0a2 2 0 1 1 -4 0"/>
+    <path android:fillColor="#7DF5FF" android:pathData="M31 31m-2 0a2 2 0 1 1 4 0a2 2 0 1 1 -4 0"/>
+    <path android:fillColor="#7DF5FF" android:pathData="M77 31m-2 0a2 2 0 1 1 4 0a2 2 0 1 1 -4 0"/>
+    <path android:fillColor="#7DF5FF" android:pathData="M31 77m-2 0a2 2 0 1 1 4 0a2 2 0 1 1 -4 0"/>
+    <path android:fillColor="#7DF5FF" android:pathData="M77 77m-2 0a2 2 0 1 1 4 0a2 2 0 1 1 -4 0"/>
+    
+    <!-- Connection lines forming neural network -->
+    <path
+        android:strokeColor="#5CE1E6"
+        android:strokeWidth="1"
+        android:pathData="M54 22L54 38M54 70L54 86M22 54L38 54M70 54L86 54"/>
+    <path
+        android:strokeColor="#5CE1E6"
+        android:strokeWidth="1"
+        android:pathData="M31 31L42 42M66 42L77 31M31 77L42 66M66 66L77 77"/>
+    
+    <!-- Central AI core -->
+    <path
+        android:fillColor="#5CE1E6"
+        android:pathData="M54 54m-12 0a12 12 0 1 1 24 0a12 12 0 1 1 -24 0"/>
+    
+    <!-- Core glow -->
+    <path
+        android:fillColor="#7DF5FF"
+        android:pathData="M54 54m-6 0a6 6 0 1 1 12 0a6 6 0 1 1 -12 0"/>
+    
+    <!-- Pulse ring -->
+    <path
+        android:strokeColor="#7DF5FF"
+        android:strokeWidth="1.5"
+        android:strokeAlpha="0.6"
+        android:pathData="M54 54m-16 0a16 16 0 1 1 32 0a16 16 0 1 1 -32 0"/>
+</vector>
