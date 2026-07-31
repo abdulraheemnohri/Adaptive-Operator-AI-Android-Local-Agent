@@ -91,6 +91,9 @@ dependencies {
 
     // --- Core ---
     implementation("androidx.core:core-ktx:1.15.0")
+    
+    // --- Security (EncryptedSharedPreferences for HF token) ---
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
